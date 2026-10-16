@@ -15,6 +15,7 @@
 - Getters y setters
 - `tieneStockBajo()`
 - `mostrarTipo()` (abstracto)
+- `imprimirInformacion()`
 
 ### DetalleVenta.java
 **Atributos privados:**
@@ -28,6 +29,7 @@
 - Getters y setters
 - `calcularSubtotal()` (abstracto)
 
+
 ## 2. Clases hijas
 
 ### ProductoVenta.java
@@ -35,17 +37,20 @@
 - Constructor
 - Getters y setters
 - Sobrescribir `mostrarTipo()`
+- `imprimirInformacion()`
 
 ### Insumo.java
 - Constructor
 - Sobrescribir `mostrarTipo()`
+- `imprimirInformacion()`
 
 ### ProductoMixto.java
 - Atributo: `precioVenta`
 - Constructor
 - Getters y setters
 - Sobrescribir `mostrarTipo()`
-
+- `imprimirInformacion()`
+  
 ### DetalleVentaProducto.java
 - Referencia al producto correspondiente
 - Constructor
@@ -89,7 +94,6 @@ Mantendrá una colección de detalles de venta.
 - `eliminarProducto()`
 - `listarStockBajo()`
 
-Administrará los productos utilizando una colección `ArrayList<Producto>`.
 
 ## 5. Menú de Main.java
 
@@ -99,13 +103,15 @@ Administrará los productos utilizando una colección `ArrayList<Producto>`.
 2. Listar productos
 3. Buscar producto
 4. Modificar producto
-5. Eliminar producto
-6. Consultar productos con stock bajo
-7. Crear venta
-8. Agregar detalle a la venta
-9. Mostrar detalles de la venta
-10. Calcular total de la venta
-0. Salir
+5. Aumentar stock
+6. Disminuir stock
+7. Eliminar producto
+8. Consultar productos con stock bajo
+9. Crear venta
+10. Agregar detalle a la venta
+11. Mostrar detalles de la venta
+12. Calcular total de la venta
+13. Salir
 ```
 
 ## 6. Entregables del laboratorio 9
