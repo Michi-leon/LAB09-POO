@@ -52,9 +52,12 @@ public abstract class Producto {
     public void setStockMinimo(int stockMinimo) {
         this.stockMinimo = stockMinimo;
     }
+    public boolean tieneStockBajo() {
+        return stockActual <= stockMinimo;
+    }
     public abstract String mostrarTipo();
 
-    public void imprimirInfromacion(){
+    public void imprimirInformacion(){
         System.out.println("ID: "+idProducto);
         System.out.println("Nombre: "+nombre);
         System.out.println("Precio compra: "+precioCompra);
