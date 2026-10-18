@@ -1,17 +1,16 @@
 public class ProductoVenta extends Producto {
-    private double precioVenta;
+    private float precioVenta;
 
-    public ProductoVenta(int idProducto, String nombre, int precioCompra,
-                         int stockActual, int stockMinimo, double precioVenta) {
+    public ProductoVenta(int idProducto, String nombre, int precioCompra, int stockActual, int stockMinimo, float precioVenta) {
         super(idProducto, nombre, precioCompra, stockActual, stockMinimo);
         this.precioVenta = precioVenta;
     }
 
-    public double getPrecioVenta() {
+    public float getPrecioVenta() {
         return precioVenta;
     }
 
-    public void setPrecioVenta(double precioVenta) {
+    public void setPrecioVenta(float precioVenta) {
         this.precioVenta = precioVenta;
     }
 
@@ -21,8 +20,8 @@ public class ProductoVenta extends Producto {
     }
 
     @Override
-    public void imprimirInfromacion() {
-        super.imprimirInfromacion();
+    public void imprimirInformacion() {
+        super.imprimirInformacion();
         System.out.println("Tipo: " + mostrarTipo());
         System.out.println("Precio venta: " + precioVenta);
     }

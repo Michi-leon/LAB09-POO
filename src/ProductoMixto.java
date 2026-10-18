@@ -1,7 +1,7 @@
 public class ProductoMixto extends Producto {
     private float precioVenta;
 
-    public ProductoMixto(int idProducto, String nombre, int precioCompra, int stockActual, int stockMinimo, float precioVenta) {
+    public ProductoMixto(int idProducto, String nombre, float precioCompra, int stockActual, int stockMinimo, float precioVenta) {
         super(idProducto, nombre, precioCompra, stockActual, stockMinimo);
         this.precioVenta = precioVenta;
     }
@@ -18,8 +18,8 @@ public class ProductoMixto extends Producto {
         return "producto mixto";
     }
     @Override
-    public void imprimirInfromacion() {
-        super.imprimirInfromacion();
+    public void imprimirInformacion() {
+        super.imprimirInformacion();
         System.out.println("Tipo: " + mostrarTipo());
         System.out.println("Precio venta: " + precioVenta);
     }

@@ -1,11 +1,11 @@
 public abstract class Producto {
     protected int idProducto;
     protected String nombre;
-    protected int precioCompra;
+    protected float precioCompra;
     protected int stockActual;
     protected int stockMinimo;
 
-    public Producto(int idProducto,String nombre, int precioCompra, int stockActual, int stockMinimo) {
+    public Producto(int idProducto,String nombre, float precioCompra, int stockActual, int stockMinimo) {
         this.idProducto = idProducto;
         this.nombre = nombre;
         this.precioCompra = precioCompra;
@@ -29,11 +29,11 @@ public abstract class Producto {
         this.idProducto = idProducto;
     }
 
-    public int getPrecioCompra() {
+    public float getPrecioCompra() {
         return precioCompra;
     }
 
-    public void setPrecioCompra(int precioCompra) {
+    public void setPrecioCompra(float precioCompra) {
         this.precioCompra = precioCompra;
     }
 

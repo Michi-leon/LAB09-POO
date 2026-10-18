@@ -10,8 +10,8 @@ public class Insumo extends Producto {
     }
 
     @Override
-    public void imprimirInfromacion() {
-        super.imprimirInfromacion();
+    public void imprimirInformacion() {
+        super.imprimirInformacion();
         System.out.println("Tipo: " + mostrarTipo());
     }
 }
