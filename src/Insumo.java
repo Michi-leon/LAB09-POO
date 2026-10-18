@@ -1,0 +1,17 @@
+public class Insumo extends Producto {
+
+    public Insumo(int idProducto, String nombre, int precioCompra,  int stockActual, int stockMinimo) {
+        super(idProducto, nombre, precioCompra, stockActual, stockMinimo);
+    }
+
+    @Override
+    public String mostrarTipo() {
+        return "Insumo";
+    }
+
+    @Override
+    public void imprimirInfromacion() {
+        super.imprimirInfromacion();
+        System.out.println("Tipo: " + mostrarTipo());
+    }
+}
