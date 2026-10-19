@@ -8,6 +8,10 @@ public class Venta {
     }
 
     public void agregarDetalle(DetalleVenta detalle) {
+        if (detalle == null) {
+            System.out.println("El detalle no puede ser nulo.");
+            return;
+        }
         detalles.add(detalle);
     }
 

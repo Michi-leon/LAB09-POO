@@ -11,7 +11,11 @@ public class DetalleVentaProducto extends DetalleVenta {
     }
 
     public void setProducto(Producto producto) {
-        this.producto = producto;
+        if (producto != null) {
+            this.producto = producto;
+        } else {
+            System.out.println("El producto no puede ser nulo.");
+        }
     }
 
     @Override

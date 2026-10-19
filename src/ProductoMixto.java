@@ -11,7 +11,11 @@ public class ProductoMixto extends Producto {
     }
 
     public void setPrecioVenta(float precioVenta) {
-        this.precioVenta = precioVenta;
+        if (precioVenta >= 0) {
+            this.precioVenta = precioVenta;
+        } else {
+            System.out.println("El precio de venta no puede ser negativo.");
+        }
     }
     @Override
     public String mostrarTipo() {

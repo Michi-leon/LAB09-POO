@@ -14,7 +14,11 @@ public class Servicio {
     }
 
     public void setIdServicio(int idServicio) {
-        this.idServicio = idServicio;
+        if (idServicio > 0) {
+            this.idServicio = idServicio;
+        } else {
+            System.out.println("El ID del servicio debe ser mayor que cero.");
+        }
     }
 
     public String getNombre() {
@@ -22,7 +26,11 @@ public class Servicio {
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        if (nombre != null && !nombre.equals("")) {
+            this.nombre = nombre;
+        } else {
+            System.out.println("El nombre no puede estar vacio.");
+        }
     }
 
     public double getPrecioHabitual() {
@@ -30,6 +38,10 @@ public class Servicio {
     }
 
     public void setPrecioHabitual(double precioHabitual) {
-        this.precioHabitual = precioHabitual;
+        if (precioHabitual >= 0) {
+            this.precioHabitual = precioHabitual;
+        } else {
+            System.out.println("El precio no puede ser negativo.");
+        }
     }
 }

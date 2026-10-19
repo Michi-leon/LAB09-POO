@@ -39,17 +39,25 @@ public class GestorProducto {
         return productoEncontrado;
     }
     //Modificacion
-    public boolean modificarNombre(int id,String nuevoNombre){
-        Producto producto=buscarProducto(id);
+    public boolean modificarNombre(int id, String nuevoNombre) {
+        Producto producto = buscarProducto(id);
         if (producto == null) {
+            return false;
+        }
+        if (nuevoNombre == null || nuevoNombre.equals("")) {
+            System.out.println("El nombre no puede estar vacio.");
             return false;
         }
         producto.setNombre(nuevoNombre);
         return true;
     }
-    public boolean modificarPrecioCompra(int id,float precioCompra){
-        Producto producto=buscarProducto(id);
+    public boolean modificarPrecioCompra(int id, float precioCompra) {
+        Producto producto = buscarProducto(id);
         if (producto == null) {
+            return false;
+        }
+        if (precioCompra < 0) {
+            System.out.println("El precio de compra no puede ser negativo.");
             return false;
         }
         producto.setPrecioCompra(precioCompra);
@@ -82,12 +90,20 @@ public class GestorProducto {
         if (producto == null) {
             return false;
         }
+        if (precioVenta < 0) {
+            System.out.println("El precio de venta no puede ser negativo.");
+            return false;
+        }
         producto.setPrecioVenta(precioVenta);
         return true;
     }
 
     public boolean modificarPrecioVentaMixto(ProductoMixto producto, float precioVenta) {
         if (producto == null) {
+            return false;
+        }
+        if (precioVenta < 0) {
+            System.out.println("El precio de venta no puede ser negativo.");
             return false;
         }
         producto.setPrecioVenta(precioVenta);

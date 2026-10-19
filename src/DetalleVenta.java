@@ -18,7 +18,11 @@ public abstract class DetalleVenta implements CalculableSubtotal {
     }
 
     public void setIdDetalle(int idDetalle) {
-        this.idDetalle = idDetalle;
+        if (idDetalle > 0) {
+            this.idDetalle = idDetalle;
+        } else {
+            System.out.println("El ID del detalle debe ser mayor que cero.");
+        }
     }
 
     public int getCantidad() {
@@ -26,7 +30,11 @@ public abstract class DetalleVenta implements CalculableSubtotal {
     }
 
     public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
+        if (cantidad > 0) {
+            this.cantidad = cantidad;
+        } else {
+            System.out.println("La cantidad debe ser mayor que cero.");
+        }
     }
 
     public double getPrecioUnitario() {
@@ -34,7 +42,11 @@ public abstract class DetalleVenta implements CalculableSubtotal {
     }
 
     public void setPrecioUnitario(double precioUnitario) {
-        this.precioUnitario = precioUnitario;
+        if (precioUnitario >= 0) {
+            this.precioUnitario = precioUnitario;
+        } else {
+            System.out.println("El precio unitario no puede ser negativo.");
+        }
     }
 
     public double getDescuento() {
@@ -42,6 +54,11 @@ public abstract class DetalleVenta implements CalculableSubtotal {
     }
 
     public void setDescuento(double descuento) {
-        this.descuento = descuento;
+        if (descuento >= 0 &&
+            descuento <= cantidad * precioUnitario) {
+            this.descuento = descuento;
+        } else {
+            System.out.println("El descuento no es valido.");
+        }
     }
 }

@@ -11,7 +11,11 @@ public class DetalleVentaServicio extends DetalleVenta {
     }
 
     public void setServicio(Servicio servicio) {
-        this.servicio = servicio;
+        if (servicio != null) {
+            this.servicio = servicio;
+        } else {
+            System.out.println("El servicio no puede ser nulo.");
+        }
     }
 
     @Override

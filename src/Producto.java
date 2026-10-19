@@ -18,7 +18,11 @@ public abstract class Producto {
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        if (nombre != null && !nombre.equals("")) {
+            this.nombre = nombre;
+        } else {
+            System.out.println("El nombre no puede estar vacio.");
+        }
     }
 
     public int getIdProducto() {
@@ -26,7 +30,11 @@ public abstract class Producto {
     }
 
     public void setIdProducto(int idProducto) {
-        this.idProducto = idProducto;
+        if (idProducto > 0) {
+            this.idProducto = idProducto;
+        } else {
+            System.out.println("El ID debe ser mayor que cero.");
+        }
     }
 
     public float getPrecioCompra() {
@@ -34,7 +42,11 @@ public abstract class Producto {
     }
 
     public void setPrecioCompra(float precioCompra) {
-        this.precioCompra = precioCompra;
+        if (precioCompra >= 0) {
+            this.precioCompra = precioCompra;
+        } else {
+            System.out.println("El precio de compra no puede ser negativo.");
+        }
     }
 
     public int getStockActual() {
@@ -42,7 +54,11 @@ public abstract class Producto {
     }
 
     public void setStockActual(int stockActual) {
-        this.stockActual = stockActual;
+        if (stockActual >= 0) {
+            this.stockActual = stockActual;
+        } else {
+            System.out.println("El stock no puede ser negativo.");
+        }
     }
 
     public int getStockMinimo() {
@@ -50,8 +66,13 @@ public abstract class Producto {
     }
 
     public void setStockMinimo(int stockMinimo) {
-        this.stockMinimo = stockMinimo;
+        if (stockMinimo >= 0) {
+            this.stockMinimo = stockMinimo;
+        } else {
+            System.out.println("El stock minimo no puede ser negativo.");
+        }
     }
+    
     public boolean tieneStockBajo() {
         return stockActual <= stockMinimo;
     }
