@@ -78,8 +78,16 @@ public class GestorProducto {
         return true;
     }
     //Productos Hijas
-    public boolean modificarPrecioVenta(int id,float precioVenta){
-        Producto producto=buscarProducto(id);
+    public boolean modificarPrecioVentaProducto(int id, float precioVenta) {
+        ProductoVenta producto = (ProductoVenta) buscarProducto(id);
+        if (producto == null) {
+            return false;
+        }
+        producto.setPrecioVenta(precioVenta);
+        return true;
+    }
+    public boolean modificarPrecioVentaMixto(int id, float precioVenta) {
+        ProductoMixto producto = (ProductoMixto) buscarProducto(id);
         if (producto == null) {
             return false;
         }
