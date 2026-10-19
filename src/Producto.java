@@ -1,9 +1,9 @@
 public abstract class Producto {
-    protected int idProducto;
-    protected String nombre;
-    protected float precioCompra;
-    protected int stockActual;
-    protected int stockMinimo;
+    private  int idProducto;
+    private String nombre;
+    private float precioCompra;
+    private int stockActual;
+    private int stockMinimo;
 
     public Producto(int idProducto,String nombre, float precioCompra, int stockActual, int stockMinimo) {
         this.idProducto = idProducto;

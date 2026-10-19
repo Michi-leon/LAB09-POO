@@ -1,7 +1,7 @@
 public class ProductoVenta extends Producto {
     private float precioVenta;
 
-    public ProductoVenta(int idProducto, String nombre, int precioCompra, int stockActual, int stockMinimo, float precioVenta) {
+    public ProductoVenta(int idProducto, String nombre, float precioCompra, int stockActual, int stockMinimo, float precioVenta) {
         super(idProducto, nombre, precioCompra, stockActual, stockMinimo);
         this.precioVenta = precioVenta;
     }

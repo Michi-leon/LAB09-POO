@@ -1,6 +1,6 @@
 public class Insumo extends Producto {
 
-    public Insumo(int idProducto, String nombre, int precioCompra,  int stockActual, int stockMinimo) {
+    public Insumo(int idProducto, String nombre, float precioCompra,  int stockActual, int stockMinimo) {
         super(idProducto, nombre, precioCompra, stockActual, stockMinimo);
     }
 
