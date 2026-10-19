@@ -4,9 +4,9 @@ public class Servicio {
     private double precioHabitual;
 
     public Servicio(int idServicio, String nombre,double precioHabitual) {
-        this.idServicio = idServicio;
-        this.nombre = nombre;
-        this.precioHabitual = precioHabitual;
+        setIdServicio(idServicio);
+        setNombre(nombre);
+        setPrecioHabitual(precioHabitual);
     }
 
     public int getIdServicio() {

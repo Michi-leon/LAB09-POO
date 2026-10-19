@@ -11,7 +11,11 @@ public class ProductoVenta extends Producto {
     }
 
     public void setPrecioVenta(float precioVenta) {
-        this.precioVenta = precioVenta;
+        if (precioVenta >= 0) {
+            setPrecioVenta(precioVenta);
+        } else {
+            System.out.println("El precio de venta no puede ser negativo.");
+        }
     }
 
     @Override

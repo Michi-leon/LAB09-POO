@@ -3,7 +3,7 @@ public class ProductoMixto extends Producto {
 
     public ProductoMixto(int idProducto, String nombre, float precioCompra, int stockActual, int stockMinimo, float precioVenta) {
         super(idProducto, nombre, precioCompra, stockActual, stockMinimo);
-        this.precioVenta = precioVenta;
+        setPrecioVenta(precioVenta);
     }
 
     public float getPrecioVenta() {

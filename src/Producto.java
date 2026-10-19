@@ -5,12 +5,12 @@ public abstract class Producto {
     private int stockActual;
     private int stockMinimo;
 
-    public Producto(int idProducto,String nombre, float precioCompra, int stockActual, int stockMinimo) {
-        this.idProducto = idProducto;
-        this.nombre = nombre;
-        this.precioCompra = precioCompra;
-        this.stockActual = stockActual;
-        this.stockMinimo = stockMinimo;
+    public Producto(int idProducto, String nombre, float precioCompra, int stockActual, int stockMinimo) {
+        setIdProducto(idProducto);
+        setNombre(nombre);
+        setPrecioCompra(precioCompra);
+        setStockActual(stockActual);
+        setStockMinimo(stockMinimo);
     }
 
     public String getNombre() {

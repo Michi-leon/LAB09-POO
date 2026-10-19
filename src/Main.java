@@ -6,7 +6,6 @@ public class Main {
         GestorProducto gestor = new GestorProducto();
         Venta ventaActual = null;
         int opcion = 0;
-
         do {
             System.out.println("TIENDA DE BELLEZA MENU V1");
             System.out.println("1. REGISTRAR PRODUCTO");
@@ -27,7 +26,7 @@ public class Main {
                 opcion = scanner.nextInt();
                 scanner.nextLine();
             } else {
-                System.out.println("INGRESA UN NUMERO VALIDO :)");
+                System.out.println("Ingrese un numero valido :)");
                 scanner.nextLine();
                 continue;
             }
@@ -35,7 +34,7 @@ public class Main {
             switch (opcion) {
                 case 1:
                     System.out.println("REGISTRAR PRODUCTO");
-                    System.out.println("TIPO [VENTA - INSUMO - MIXTO]: ");
+                    System.out.println("TIPO (1: Venta, 2: Insumo, 3: Mixto):");
                     int tipo = scanner.nextInt();
                     scanner.nextLine();
 
@@ -45,7 +44,7 @@ public class Main {
                     System.out.println("NOMBRE: ");
                     String nombre = scanner.nextLine();
                     System.out.println("PRECIO DE COMPRA: ");
-                    int precioCompra = scanner.nextInt();
+                    float precioCompra = scanner.nextFloat();
                     System.out.println("STOCK ACTUAL: ");
                     int stockActual = scanner.nextInt();
                     System.out.println("STOCK MINIMO: ");
@@ -55,14 +54,14 @@ public class Main {
                         System.out.println("PRECIO DE VENTA:");
                         float precioVenta = scanner.nextFloat();
                         if (tipo == 1) {
-                            ProductoVenta pv = new ProductoVenta(id,nombre,precioCompra,stockActual,stockMinimo,precioVenta);
+                            ProductoVenta pv = new ProductoVenta(id, nombre, precioCompra, stockActual, stockMinimo, precioVenta);
                             gestor.registrarProducto(pv);
                         } else {
-                            ProductoMixto pm = new ProductoMixto(id,nombre,precioCompra,stockActual,stockMinimo,precioVenta);
+                            ProductoMixto pm = new ProductoMixto(id, nombre, precioCompra, stockActual, stockMinimo, precioVenta);
                             gestor.registrarProducto(pm);
                         }
                     } else if (tipo == 2) {
-                        Insumo insumo = new Insumo(id,nombre,precioCompra,stockActual,stockMinimo);
+                        Insumo insumo = new Insumo(id, nombre, precioCompra, stockActual, stockMinimo);
                         gestor.registrarProducto(insumo);
                     } else {
                         System.out.println("ESTO NO ES VALIDO");
@@ -142,8 +141,30 @@ public class Main {
                     if (ventaActual == null) {
                         System.out.println("PRIMERO DEBERIAS CREAR UNA VENTA");
                     } else {
-                        System.out.println("AGREGAR DETALLES");
-                        System.out.println("FUNCIONALIDAD EN DESARROLLO");
+                        System.out.println("AGREGAR DETALLE A LA VENTA");
+                        System.out.println("INGRESE ID DEL PRODUCTO: ");
+                        int idProd = scanner.nextInt();
+                        Producto prod = gestor.buscarProducto(idProd);
+                        if (prod != null) {
+                            System.out.println("ID DEL DETALLE: ");
+                            int idDet = scanner.nextInt();
+                            System.out.println("CANTIDAD: ");
+                            int cant = scanner.nextInt();
+                            System.out.println("PRECIO UNITARIO: ");
+                            double precioU = scanner.nextDouble();
+                            System.out.println("DESCUENTO: ");
+                            double desc = scanner.nextDouble();
+
+                            // VALIDACIÓN SIMPLE SIN EXCEPCIONES:
+                            double maxDescuento = cant * precioU;
+                            if (desc < 0 || desc > maxDescuento) {
+                                System.out.println("ERROR: El descuento no es valido. Debe estar entre 0 y " + maxDescuento);
+                            } else {
+                                DetalleVentaProducto detalle = new DetalleVentaProducto(idDet, cant, precioU, desc, prod);
+                                ventaActual.agregarDetalle(detalle);
+                                System.out.println("DETALLADO CON EXITO");
+                            }
+                        }
                     }
                     break;
 

@@ -3,7 +3,7 @@ public class DetalleVentaProducto extends DetalleVenta {
 
     public DetalleVentaProducto(int idDetalle, int cantidad,double precioUnitario, double descuento, Producto producto) {
         super(idDetalle, cantidad, precioUnitario, descuento);
-        this.producto = producto;
+        setProducto(producto);
     }
 
     public Producto getProducto() {

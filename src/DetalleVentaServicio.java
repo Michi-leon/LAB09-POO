@@ -3,7 +3,7 @@ public class DetalleVentaServicio extends DetalleVenta {
 
     public DetalleVentaServicio(int idDetalle, int cantidad,double precioUnitario, double descuento, Servicio servicio) {
         super(idDetalle, cantidad, precioUnitario, descuento);
-        this.servicio = servicio;
+        setServicio(servicio);
     }
 
     public Servicio getServicio() {

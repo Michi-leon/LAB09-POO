@@ -5,10 +5,10 @@ public abstract class DetalleVenta implements CalculableSubtotal {
     private double descuento;
 
     public DetalleVenta(int idDetalle, int cantidad,double precioUnitario, double descuento) {
-        this.idDetalle = idDetalle;
-        this.cantidad = cantidad;
-        this.precioUnitario = precioUnitario;
-        this.descuento = descuento;
+        setIdDetalle(idDetalle);
+        setCantidad(cantidad);
+        setPrecioUnitario(precioUnitario);
+        setDescuento(descuento);
     }
 
     public abstract double calcularSubtotal();

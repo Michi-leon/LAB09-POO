@@ -8,7 +8,10 @@ public class GestorProducto {
             System.out.println("El producto no puede ser null");
             return false;
         }
-
+        if (producto.getIdProducto() <= 0) {
+            System.out.println("El ID debe ser mayor que cero.");
+            return false;
+        }
         if(listaProducto.containsKey(producto.getIdProducto())) {
             System.out.println("El ide ya esta registrado");
             return false;
@@ -41,13 +44,8 @@ public class GestorProducto {
     //Modificacion
     public boolean modificarNombre(int id, String nuevoNombre) {
         Producto producto = buscarProducto(id);
-        if (producto == null) {
-            return false;
-        }
-        if (nuevoNombre == null || nuevoNombre.equals("")) {
-            System.out.println("El nombre no puede estar vacio.");
-            return false;
-        }
+        if (producto == null) return false;
+
         producto.setNombre(nuevoNombre);
         return true;
     }
